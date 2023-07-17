@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="menu-container">
+ 
+  <div class="menu-details" id="menu">
+    <h2 class="menu-heading">Menu</h2>
+    <div class="menu-categories">
+      <div class="search-container">
+        <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (input)="filterMenuItems('all', searchTerm)" class="search-bar">
+        
+      </div>
+      <button class="category-button" (click)="filterMenuItems('all', searchTerm)">All</button>
+      <button class="category-button" *ngFor="let category of categories" (click)="filterMenuItems(category, searchTerm)">{{ category }}</button>
+    
+    </div>
+    <div class="menu-items">
+      <div class="menu-item" *ngFor="let item of combinedMenuItems">
+        <img [src]="item.image" alt="{{ item.name }}" class="item-image">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+      <p class="item-price">{{ item.price | currency }}</p>
+      
+      <button (click)="addToCart(item)">Add to Cart</button>
+    </div>
+  </div> 
+ </div>
+</div>

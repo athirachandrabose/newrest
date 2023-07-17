@@ -1,0 +1,52 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    flex: 1;
+    padding-right: 20px;
+    /* Add any additional styling for the image container */
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    /* Add any additional styling for the image */
+  }
+  
+  .form-content {
+    flex: 1;
+    margin-top: 60px;
+    /* Add any additional styling for the form content */
+  }
+  
+  .form-row {
+    margin-bottom: 10px;
+    /* Add any additional styling for the form rows */
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="datetime-local"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 5px;
+    /* Add any additional styling for the form inputs */
+  }
+  
+  button.book-now-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Add any additional styling for the book now button */
+  }
+  

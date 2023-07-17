@@ -1,0 +1,37 @@
+<app-navigation-bar></app-navigation-bar>
+<html lang="en" dir="ltr">
+  <head>
+     <meta charset="utf-8">
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body>
+     <div class="content">
+        <div class="text">
+           Login Form
+        </div>
+        <!-- <form action="#"> -->
+           <div class="field">
+              <!-- <input type="text" required> -->
+               <span class="fas fa-user"></span>
+              <!-- <label>Username:</label>  -->
+              <input type="text" id="username" [(ngModel)]="username" class="form-control" placeholder="Enter your username">
+           </div>
+           <div class="field">
+              <!-- <input type="password" required> -->
+              <span class="fas fa-lock"></span>
+              <!-- <label>Password</label> -->
+              <input type="password" id="password" [(ngModel)]="password" class="form-control" placeholder="Enter your password">
+ 
+           </div>
+           <div class="forgot-password-link">
+            <a (click)="navigateToReset()">Forgot Password?</a>
+          </div>
+          <button class="btn btn-primary" (click)="login()">Login</button>
+          <div class="signup-link">
+            <a routerLink="/signup">Don't have an account? Sign up here</a>
+          </div>
+        <!-- </form> -->
+     </div>
+  </body>
+</html>

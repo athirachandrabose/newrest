@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="open-book-container">
+  <div class="left-section">
+    <div class="order-summary-container">
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        <ul>
+          <li *ngFor="let item of cartItems">
+            <img [src]="item.item.image" alt="{{ item.item.name }}" class="item-image">
+            {{ item.item.name }} - Quantity: {{ item.quantity }} - {{ item.price | currency }}
+          </li>
+        </ul>
+        <p>Total Amount: {{ totalAmount | currency }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="right-section">
+    <div class="form-container">
+      <h2>Payment Form</h2>
+      <form (ngSubmit)="submitPaymentForm()">
+      <div class="form-group">
+        <label for="firstName"> Name</label>
+        <input type="text" id="firstName" placeholder="Enter first name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter email address" required>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" placeholder="Enter phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" placeholder="Enter card number" required>
+      </div>
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" placeholder="MM/YY" required>
+      </div>
+      <div class="form-group">
+        <label for="cardHolder">Card Holder</label>
+        <input type="text" id="cardHolder" placeholder="Enter card holder's name" required>
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVC</label>
+        <input type="text" id="cvc" placeholder="Enter CVC" required>
+      </div>
+
+      <div class="form-group">
+        <label for="paymentDate">Date of Payment</label>
+        <input type="date" id="paymentDate" required>
+      </div>
+       
+      <div class="form-group">
+        <button type="submit" 
+       
+        >Submit Payment</button>
+      </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  
+  <div class="overlay" *ngIf="showSuccess">
+    <div class="popup">
+      <p>Payment successfully completed!</p>
+      <button class="close-button" (click)="closeSuccessMessage()">Close</button>
+    </div>
+  </div>
+  

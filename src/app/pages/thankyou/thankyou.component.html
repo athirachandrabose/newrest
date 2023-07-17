@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+  <div class="thank-you-container">
+    <div class="card-container" [ngClass]="{'flipped': isCardFlipped}">
+      <div class="card-side front">
+        <h2>Thank You!</h2>
+        <p>Thank you for choosing us to satisfy your cravings!</p>
+        <h3>Give your taste buds a voice!</h3>
+        <div class="order-summary-container">
+          <div class="order-summary">
+            <ul>
+              <li *ngFor="let item of orderedItems">
+                <div class="order-item">
+                  <div class="item-details">
+                    <img [src]="item.item.image" alt="{{ item.item.name }}" class="item-image">
+                    <span class="item-name">{{ item.item.name }} </span>
+                  </div>
+                  <div class="rating-group">
+                    <label for="rating{{item.item.name}}">Rating:</label>
+                    <div class="star-rating">
+                      <span class="star" (click)="rateItem(item, 1)" [class.filled]="item.rating >= 1"></span>
+                      <span class="star" (click)="rateItem(item, 2)" [class.filled]="item.rating >= 2"></span>
+                      <span class="star" (click)="rateItem(item, 3)" [class.filled]="item.rating >= 3"></span>
+                      <span class="star" (click)="rateItem(item, 4)" [class.filled]="item.rating >= 4"></span>
+                      <span class="star" (click)="rateItem(item, 5)" [class.filled]="item.rating >= 5"></span>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="arrow-icon" (click)="flipCard()"></div>
+      </div>
+      <div class="card-side back">
+        <h2>We value your experience</h2>
+        <form (ngSubmit)="submitRatingForm()">
+          <div class="form-group">
+            <label for="suggestions">Give Suggestions:</label>
+            <textarea id="suggestions" name="suggestions" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+        <div class="arrow-icon-img" (click)="flipCard()"></div>
+      </div>
+  </div>
+  

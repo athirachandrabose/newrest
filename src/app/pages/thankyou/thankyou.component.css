@@ -1,0 +1,165 @@
+.thank-you-container {
+  width: 450px;
+  margin: 0 auto;
+  perspective: 1000px;
+  margin-top: 100px;
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  transform-origin: center ;
+}
+
+/*  */
+.card-container.flipped {
+  transform: rotateY(180deg);
+}
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.front {
+  z-index: 2;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.back {
+  transform: rotateY(-180deg);
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/664/664866.png"); /* Replace with your arrow icon image */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  /* transform: rotate(180deg); */
+}
+.arrow-icon-img{
+  position: absolute;
+  top: 10px;
+ left: 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/545/545680.png"); /* Replace with your arrow icon image */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+}
+.arrow-icon:hover {
+  opacity: 0.8;
+}
+.item-image{
+  height: 50px;
+  width: 50px;
+}
+
+.star-rating {
+  display: inline-block;
+  font-size: 24px;
+  color: #ffc107; 
+}
+
+.star-rating .star {
+  cursor: pointer;
+}
+
+.star-rating .star:before {
+  content: "\2606"; 
+  margin-right: 5px;
+}
+
+.star-rating .star.filled:before {
+  content: "\2605"; 
+}
+
+.rating-group{
+  margin-bottom: 15px;
+}
+.item-name{
+  margin-left: 10px;
+}
+
+.card-side.back {
+  transform: rotateY(-180deg);
+  background-color: #f9f9f9;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-side.back h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.card-side.back form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-side.back .form-group {
+  margin-bottom: 20px;
+}
+
+.card-side.back label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.card-side.back textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.card-side.back button[type="submit"] {
+  background-color: #428bca;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card-side.back button[type="submit"]:hover {
+  background-color: #3071a9;
+}

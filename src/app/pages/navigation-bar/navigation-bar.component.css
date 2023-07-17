@@ -1,0 +1,37 @@
+
+nav {
+ 
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+  }
+  
+  nav a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 4px;
+   margin-right: 20px;
+    
+  }
+  
+  nav a:hover {
+    /* background-color: #f39999; */
+    color: #8d3232;
+  }
+  
+  nav a.active {
+    /* background-color: #444040; */
+    color: #ec8080;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #949191; /* Customize the background color as needed */
+    z-index: 999; /* Ensure the navigation appears on top of other elements */
+    opacity: 0.5;
+  }
